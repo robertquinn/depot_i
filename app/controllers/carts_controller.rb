@@ -1,4 +1,6 @@
 class CartsController < ApplicationController
+  skip_before_filter :authorize
+  
   # GET /carts
   # GET /carts.json
   def index
@@ -83,6 +85,7 @@ class CartsController < ApplicationController
     
     respond_to do |format|
       format.html { redirect_to store_url}
+      format.js 
       format.json { head :no_content }
     end
   end
